@@ -5,20 +5,20 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Welcome to XAMI Lab @QUT',
+  tagline: `Supporting Human-Machine Collaboration and Co-evolution by Explainable Analytics for Machine Intelligence`,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://zhipenghe.me',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/xami-website/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'ZhipengHe', // Usually your GitHub org/user name.
+  projectName: 'xami-website', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -39,8 +39,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl:
+          //   'https://github.com/ZhipengHe/xami-website/tree/master/',
         },
         blog: {
           showReadingTime: true,
@@ -68,21 +68,24 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'XAMI Lab',  
       logo: {
-        alt: 'My Site Logo',
+        alt: 'XAMI-Lab Logo',
         src: 'img/logo.svg',
       },
       items: [
+        {to: '/mission', label: 'Our Mission', position: 'left'},
+        {to: '/people', label: 'People', position: 'left'},
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'projectSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Research Projects',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/publications', label: 'Publications', position: 'left'},
+        {to: '/xami-tube', label: 'XAMI-Tube', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/XAMI-LAB',
           label: 'GitHub',
           position: 'right',
         },
@@ -91,47 +94,41 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
+      {
+        title: 'Related Links',
+        items: [
+          {
+            label: 'Queensland University of Technology',
+            href: 'https://www.qut.edu.au/',
+          },
+          {
+            label: 'QUT Centre for Data Science',
+            href: 'https://research.qut.edu.au/qutcds/',
+          },
+          {
+            label: 'QUT School of Information Systems',
+            href: 'https://www.qut.edu.au/about/faculty-of-science/school-of-information-systems',
+          },
+        ],
+      },
+      {
+        title: 'Contact Us',
+        items: [
+          {
+            label: 'Email',
+            href: 'mailto:xami.initiaive@gmail.com',
+          },
+          // {
+          //   html: `
+          //     <p>2 George St. Brisbane City QLD 4000</p>
+          //     `,
+          // },
+
+        ],
+      }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab <a href="https://www.qut.edu.au/" target="_blank">@QUT</a>. Last updated: ${new Date().toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} `,
+
     },
     prism: {
       theme: prismThemes.github,

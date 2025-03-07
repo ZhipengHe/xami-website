@@ -1,6 +1,27 @@
-# Website
+# XAMI Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+## Refactor Plan
+
+> **Note:** This is a work in progress. The goal is to refactor the current website to use Docusaurus.
+
+- [x] Use `create-docusaurus` to create a new template website
+- [x] Add pages for each of the main sections from the current website
+- [ ] Add content to each of the pages
+    - [ ] Config Home page
+    - [ ] Add Our Mission page
+    - [ ] Add People page
+    - [ ] Add Research Projects page (with subpages)
+        - [ ] Add subpage for project 1
+        - [ ] Add subpage for project 2
+        - [ ] Add subpage for project 3
+        - [ ] Add subpage for project 4
+    - [ ] Add Publications page
+    - [ ] Add XAMI-Tube page
+
+
+## Getting Started
 
 ### Installation
 
@@ -39,3 +60,34 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+### File Structure
+
+```
+.
+├── README.md
+├── blog
+│   ├── 2019-05-28-first-blog-post.md
+│   ├── 2019-05-29-long-blog-post.md
+│   ├── 2021-08-01-mdx-blog-post.mdx
+│   ├── 2021-08-26-welcome
+│   ├── authors.yml
+│   └── tags.yml
+├── docs
+│   ├── intro.md
+│   ├── tutorial-basics
+│   └── tutorial-extras
+├── docusaurus.config.ts # website config
+├── package.json
+├── sidebars.ts # sidebar config
+├── src
+│   ├── components
+│   ├── css
+│   └── pages
+├── static
+│   └── img
+├── tsconfig.json
+└── yarn.lock
+
+12 directories, 12 files
+```

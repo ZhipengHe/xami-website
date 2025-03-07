@@ -1,0 +1,7 @@
+label: "Research Themes"
+position: 2
+collapsible: true
+collapsed: false
+link:
+  type: generated-index
+  description: "Our research focuses on the following themes:"
