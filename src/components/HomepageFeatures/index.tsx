@@ -7,36 +7,47 @@ type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: ReactNode;
+  url?: string;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Explainable Predictive Process Analytics',
+    Svg: require('@site/static/img/undraw_detailed-examination.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Reveal the reasoning behind business process predictions to 
+        enhance trust and provide actionable insights for organisations.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Probabilistic & Causal Models for Responsible AI',
+    Svg: require('@site/static/img/undraw_spreadsheets.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Develop transparent AI with counterfactual explanations 
+        to make complex statistical models understandable to humans.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Persuasive Models for Explainable AI',
+    Svg: require('@site/static/img/undraw_predictive-analytics.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Create narrative-based explanations to transform technical AI 
+        outputs into compelling, trustworthy information.
+      </>
+    ),
+  },
+  {
+    title: 'Explainable Medical Diagnostic Systems',
+    Svg: require('@site/static/img/undraw_medical-research.svg').default,
+    description: (
+      <>
+        Build intuitive interfaces to translate AI-powered diagnoses into actionable 
+        insights for clinical decision-making.
       </>
     ),
   },
@@ -44,7 +55,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, Svg, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>

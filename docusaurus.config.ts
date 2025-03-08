@@ -78,7 +78,7 @@ const config: Config = {
       title: 'XAMI Lab',  
       logo: {
         alt: 'XAMI Logo',
-        src: 'img/XAMI-Lab-Collapsed.png',
+        src: 'img/XAMI-Lab-Collapsed_Overlay.png',
       },
       items: [
         {to: '/mission', label: 'Our Mission', position: 'left'},
