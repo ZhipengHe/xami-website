@@ -1,8 +1,11 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+const baseUrl = '/xami-website/';
 
 const config: Config = {
   title: 'Welcome to XAMI Lab @QUT',
@@ -13,7 +16,7 @@ const config: Config = {
   url: 'https://zhipenghe.me',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/xami-website/',
+  baseUrl: baseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -37,6 +40,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // routeBasePath: 'research',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -107,25 +111,17 @@ const config: Config = {
           {
             html: `
                 <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website">
-                  <img src="img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 40%; height: auto;"/>
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 40%; height: auto;"/>
                 </a>
               `,
           },
           {
             html: `
                 <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
-                  <img src="img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
                 </a>
               `,
           },
-          // {
-          //   label: 'QUT Centre for Data Science',
-          //   href: 'https://research.qut.edu.au/qutcds/',
-          // },
-          // {
-          //   label: 'QUT School of Information Systems',
-          //   href: 'https://www.qut.edu.au/about/faculty-of-science/school-of-information-systems',
-          // },
         ],
       },
       {
@@ -140,7 +136,7 @@ const config: Config = {
       ],
       logo: {
         alt: 'XAMI Lab Logo',
-        src: 'img/XAMI-Lab-Long.png',
+        src: '/img/XAMI-Lab-Long.png',
         href: '/',
         style: {width: "40%", height: "auto"},
       },
