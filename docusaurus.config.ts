@@ -47,6 +47,8 @@ const config: Config = {
           routeBasePath: 'publications',
           blogTitle: 'Publications',
           blogSidebarTitle: 'All Publications',
+          blogSidebarCount: 'ALL',
+          postsPerPage: 'ALL',
           blogDescription: 'Research publications from XAMI Lab',
           showReadingTime: false,
           feedOptions: {
@@ -71,12 +73,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/XAMI_v2.png',
     navbar: {
       title: 'XAMI Lab',  
       logo: {
-        alt: 'XAMI-Lab Logo',
-        src: 'img/logo.svg',
+        alt: 'XAMI Logo',
+        src: 'img/XAMI-Lab-Collapsed.png',
       },
       items: [
         {to: '/mission', label: 'Our Mission', position: 'left'},
@@ -103,17 +105,27 @@ const config: Config = {
         title: 'Related Links',
         items: [
           {
-            label: 'Queensland University of Technology',
-            href: 'https://www.qut.edu.au/',
+            html: `
+                <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website">
+                  <img src="img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 40%; height: auto;"/>
+                </a>
+              `,
           },
           {
-            label: 'QUT Centre for Data Science',
-            href: 'https://research.qut.edu.au/qutcds/',
+            html: `
+                <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
+                  <img src="img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+                </a>
+              `,
           },
-          {
-            label: 'QUT School of Information Systems',
-            href: 'https://www.qut.edu.au/about/faculty-of-science/school-of-information-systems',
-          },
+          // {
+          //   label: 'QUT Centre for Data Science',
+          //   href: 'https://research.qut.edu.au/qutcds/',
+          // },
+          // {
+          //   label: 'QUT School of Information Systems',
+          //   href: 'https://www.qut.edu.au/about/faculty-of-science/school-of-information-systems',
+          // },
         ],
       },
       {
@@ -123,16 +135,16 @@ const config: Config = {
             label: 'Email',
             href: 'mailto:xami.initiaive@gmail.com',
           },
-          // {
-          //   html: `
-          //     <p>2 George St. Brisbane City QLD 4000</p>
-          //     `,
-          // },
-
         ],
       }
       ],
-      copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab <a href="https://www.qut.edu.au/" target="_blank">@QUT</a>. Last updated: ${new Date().toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} `,
+      logo: {
+        alt: 'XAMI Lab Logo',
+        src: 'img/XAMI-Lab-Long.png',
+        href: '/',
+        style: {width: "40%", height: "auto"},
+      },
+      copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab @QUT. Last updated: ${new Date().toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} `,
 
     },
     prism: {
