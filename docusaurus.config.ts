@@ -5,7 +5,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
-const baseUrl = '/xami-website/';
+const baseUrl = '/';
 
 const config: Config = {
   title: 'Welcome to XAMI Lab @QUT',
