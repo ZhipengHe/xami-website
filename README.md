@@ -91,3 +91,8 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 12 directories, 12 files
 ```
+
+### Publication List
+
+The publication list is generated from a BibTeX file. To update the publication list, edit the `publications.bib` file in the `bibtex` directory.
+Please refer to https://github.com/ZhipengHe/bibliodocus for more information on how the component works.
