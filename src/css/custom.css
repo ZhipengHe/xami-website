@@ -70,3 +70,5 @@
 /* You can also include custom CSS files. */
 @import 'blog.css';
 @import 'footer.css';
+@import 'bibtex-references.css';
+@import 'filter-controls-styles.css';

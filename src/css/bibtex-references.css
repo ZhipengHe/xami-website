@@ -1,0 +1,264 @@
+/**
+ * BibTeX References CSS
+ * 
+ * Styles for BibTeX reference components in Docusaurus
+ */
+
+/* Main container styles */
+.bibtex-references {
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+  
+  /* References title */
+  .bibtex-references-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  }
+  
+  /* Loading state */
+  .bibtex-loading {
+    padding: 1rem;
+    color: var(--ifm-color-emphasis-600);
+    text-align: center;
+  }
+  
+  /* Error messages */
+  .bibtex-error {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    color: var(--ifm-color-danger);
+  }
+  
+  /* Reference list container */
+  .reference-list {
+    padding-left: 0;
+  }
+  
+  /* Reference list items */
+  .reference-list ol {
+    padding-left: 2rem;
+    margin: 0;
+    list-style-type: decimal;
+  }
+  
+  /* Individual reference entry */
+  .reference-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .reference-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Citation key styling */
+  .citation-key {
+    font-family: var(--ifm-font-family-monospace);
+    font-weight: 600;
+    color: var(--ifm-color-primary);
+    margin-right: 0.5rem;
+  }
+  
+  /* Empty list message */
+  .reference-list-empty {
+    padding: 1rem;
+    text-align: center;
+    color: var(--ifm-color-emphasis-600);
+    font-style: italic;
+  }
+  
+  /* Entry type specific styling */
+  .reference-type-article .reference-text em {
+    font-style: italic;
+  }
+  
+  .reference-type-book .reference-text em {
+    font-style: italic;
+  }
+  
+  .reference-type-inproceedings .reference-text em,
+  .reference-type-incollection .reference-text em,
+  .reference-type-conference .reference-text em {
+    font-style: italic;
+  }
+  
+  /* Links in references (URLs, DOIs) */
+  .reference-text a {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+    word-break: break-word;
+  }
+  
+  .reference-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* DOI and URL display */
+  .reference-text a[href^="https://doi.org"] {
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.9em;
+  }
+  
+  /* BibTeX Debugger styles */
+  .bibtex-debugger {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 0.5rem;
+  }
+  
+  .bibtex-debugger h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  }
+  
+  .bibtex-debug-file {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    background-color: var(--ifm-color-emphasis-100);
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bibtex-debug-file p {
+    margin: 0;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.9em;
+  }
+  
+  .bibtex-debug-input {
+    margin-bottom: 1.5rem;
+  }
+  
+  .bibtex-debug-input h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .bibtex-debug-input textarea {
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.9em;
+    resize: vertical;
+  }
+  
+  /* Debug entry display */
+  .bibtex-debug-entry {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--ifm-color-emphasis-100);
+    border-radius: 0.25rem;
+  }
+  
+  .bibtex-debug-entry h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 1rem;
+    color: var(--ifm-color-primary);
+  }
+  
+  .bibtex-debug-entry-tags table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .bibtex-debug-entry-tags th,
+  .bibtex-debug-entry-tags td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid var(--ifm-color-emphasis-300);
+  }
+  
+  .bibtex-debug-entry-tags th {
+    background-color: var(--ifm-color-emphasis-200);
+    font-weight: 600;
+  }
+  
+  .bibtex-debug-field {
+    font-family: var(--ifm-font-family-monospace);
+    font-weight: 600;
+    width: 25%;
+  }
+  
+  .bibtex-debug-value {
+    font-family: var(--ifm-font-family-monospace);
+    word-break: break-word;
+  }
+  
+  .bibtex-debug-error {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-radius: 0.25rem;
+  }
+  
+  .bibtex-debug-error h4 {
+    margin-top: 0;
+    color: var(--ifm-color-danger);
+  }
+  
+  .bibtex-debug-error pre {
+    margin-bottom: 0;
+    overflow-x: auto;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 0.9em;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  
+  /* Style buttons consistently */
+  .bibtex-debugger button {
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .bibtex-debugger button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .bibtex-debug-file {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .bibtex-debug-file button {
+      margin-top: 0.5rem;
+    }
+    
+    .bibtex-debug-field {
+      width: 40%;
+    }
+  }
+  
+  /* Dark mode adjustments */
+  html[data-theme='dark'] .bibtex-debug-error,
+  html[data-theme='dark'] .bibtex-error {
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+  
+  html[data-theme='dark'] .bibtex-debug-error pre {
+    background-color: rgba(0, 0, 0, 0.3);
+  }

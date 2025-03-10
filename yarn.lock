@@ -2029,6 +2029,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@orcid/bibtex-parse-js@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@orcid/bibtex-parse-js/-/bibtex-parse-js-0.0.25.tgz#3a4996d2339cab55ab6e43849cc791efa7a35418"
+  integrity sha512-n6VuG5/WjiifC1DoUzq0sUCWNSbAyRZznBgvPcY4jVZ/2eJiMv2tNUAt2NukbnFExOUa0RyTOFsqhH2MGpiLgQ==
+
 "@pnpm/config.env-replace@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@pnpm/config.env-replace/-/config.env-replace-1.1.0.tgz#ab29da53df41e8948a00f2433f085f54de8b3a4c"
@@ -2953,11 +2958,6 @@ batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
   integrity sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==
-
-bibtex-parser-js@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/bibtex-parser-js/-/bibtex-parser-js-0.0.2.tgz#940c533be4068e22372743bc5ab6e52cc9e1bd54"
-  integrity sha512-vd6wktUeJTAjIqKE3pornTXJApKou38zODuX/MlM0Hl5Tf9fd1hl9KvGJcPqJ+rTU4ODEdD7SchkjBNJ/iFo1A==
 
 big.js@^5.2.2:
   version "5.2.2"
