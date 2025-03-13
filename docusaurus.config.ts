@@ -13,7 +13,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://zhipenghe.me',
+  url: 'https://xami-lab.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: baseUrl,
@@ -40,7 +40,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // routeBasePath: 'research',
+          routeBasePath: 'research',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -55,6 +55,9 @@ const config: Config = {
           postsPerPage: 'ALL',
           blogDescription: 'Research publications from XAMI Lab',
           showReadingTime: false,
+          remarkPlugins: [],
+          rehypePlugins: [
+          ],
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -67,6 +70,10 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+        },
+        pages: {
+          remarkPlugins: [],
+          rehypePlugins: [],
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -93,7 +100,17 @@ const config: Config = {
           position: 'left',
           label: 'Research Projects',
         },
-        {to: '/publications', label: 'Publications', position: 'left'},
+        // {
+        //   type: 'dropdown',
+        //   position: 'left',
+        //   label: 'Publications',
+        //   to: '/bibliography',
+        //   items: [
+        //     {to: '/bibliography', label: 'Bibliography'},
+        //     {to: '/publications', label: 'All Publications'},
+        //   ],
+        // },
+        {to: '/bibliography', label: 'Publications', position: 'left'},
         {to: '/xami-tube', label: 'XAMI-Tube', position: 'left'},
         {
           href: 'https://github.com/XAMI-LAB',
@@ -115,13 +132,13 @@ const config: Config = {
                 </a>
               `,
           },
-          {
-            html: `
-                <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
-                </a>
-              `,
-          },
+          // {
+          //   html: `
+          //       <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
+          //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+          //       </a>
+          //     `,
+          // },
         ],
       },
       {
