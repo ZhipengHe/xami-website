@@ -206,7 +206,7 @@ export const formatDOI = (doi: string | undefined): string => {
   // Clean up the DOI by removing prefixes if present
   const cleanDoi = doi.replace(/^(https?:\/\/(dx\.)?doi\.org\/|doi:)/i, '');
   
-  return `<a href="https://doi.org/${cleanDoi}" target="_blank" rel="noopener noreferrer">https://doi.org/${cleanDoi}</a>`;
+  return `<a href="https://doi.org/${cleanDoi}" target="_blank" rel="noopener noreferrer">[doi]</a>`;
 };
 
 /**
@@ -216,7 +216,7 @@ export const formatDOI = (doi: string | undefined): string => {
 export const formatURL = (url: string | undefined): string => {
   if (!url) return '';
   
-  return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+  return `<a href="${url}" target="_blank" rel="noopener noreferrer">$[url]</a>`;
 };
 
 /**
