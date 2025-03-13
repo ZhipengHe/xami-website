@@ -48,7 +48,7 @@ interface ReferenceListProps {
   className?: string;
   showCitationKeys?: boolean;
   filter?: (entry: BibEntry) => boolean;
-  sortBy?: 'year' | 'author' | 'title' | 'citationKey';
+  sortBy?: 'year' | 'author' | 'title' | 'date' | 'citationKey';
   sortDirection?: 'asc' | 'desc';
 }
 
@@ -92,6 +92,9 @@ const ReferenceList: React.FC<ReferenceListProps> = ({
     } else if (sortBy === 'citationKey') {
       valueA = a.citationKey;
       valueB = b.citationKey;
+    } else if (sortBy === 'date') {
+      valueA = a.entryTags.date;
+      valueB = b.entryTags.date;
     }
 
     // Handle cases where values are undefined
@@ -103,6 +106,13 @@ const ReferenceList: React.FC<ReferenceListProps> = ({
       const yearA = parseInt(valueA, 10) || 0;
       const yearB = parseInt(valueB, 10) || 0;
       return sortDirection === 'asc' ? yearA - yearB : yearB - yearA;
+    }
+
+    // For sorting by date, convert to Date objects for comparison
+    if (sortBy === 'date') {
+      const dateA = new Date(valueA);
+      const dateB = new Date(valueB);
+      return sortDirection === 'asc' ? dateA.getTime() - dateB.getTime() : dateB.getTime() - dateA.getTime();
     }
 
     // For string values, use localeCompare for proper string comparison

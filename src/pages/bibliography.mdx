@@ -2,12 +2,14 @@
 title: Publications
 ---
 
-import { BibTexFilterControls, BibTexReferences, BibTexDebugger } from '@site/src/components/bibliodocus';
+import { BibTexFilterControls, BibTexReferences, BibTexDebugger, ReferenceList } from '@site/src/components/bibliodocus';
 
 # Publications
 
 <BibTexFilterControls 
   filePath="/bibtex/publications.bib"
+  title=""
   defaultStyle="apa"
+  defaultSortBy='date'
   showCitationKeys={false}
 />

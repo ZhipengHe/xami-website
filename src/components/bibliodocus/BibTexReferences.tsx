@@ -24,7 +24,7 @@ interface BibTexReferencesProps {
   style?: ReferenceStyle;
   showCitationKeys?: boolean;
   filter?: (entry: BibEntry) => boolean;
-  sortBy?: 'year' | 'author' | 'title' | 'citationKey';
+  sortBy?: 'year' | 'author' | 'title' | 'date' | 'citationKey';
   sortDirection?: 'asc' | 'desc';
   className?: string;
   loadingComponent?: React.ReactNode;
