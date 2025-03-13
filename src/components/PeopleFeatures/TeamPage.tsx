@@ -149,7 +149,7 @@ const TeamPage: React.FC = () => {
                 url={author.url}
                 idx={author.idx}
                 links={{
-                  email: author.email,
+                  email: author.email ? `mailto:${author.email}` : undefined,
                   github: author.github,
                   twitter: author.twitter,
                   linkedin: author.linkedin,
