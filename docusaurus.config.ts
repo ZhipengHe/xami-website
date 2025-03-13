@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 const baseUrl = '/';
 
 const config: Config = {
-  title: 'Welcome to XAMI Lab @QUT',
+  title: 'XAMI Lab @QUT',
   tagline: `Supporting Human-Machine Collaboration and Co-evolution by Explainable Analytics for Machine Intelligence`,
   favicon: 'img/favicon.ico',
 
@@ -72,7 +72,8 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         pages: {
-          remarkPlugins: [],
+          remarkPlugins: [
+          ],
           rehypePlugins: [],
         },
         theme: {

@@ -9,6 +9,8 @@
 /* Author image styling */
 .authorImage {
   --ifm-avatar-photo-size: 3.6rem;
+  object-fit: cover;
+  object-position: 50% 20%;
 }
 
 .author-as-h1 .authorImage {
@@ -53,8 +55,8 @@
   line-height: 1rem;
   display: -webkit-box;
   overflow: hidden;
-  line-clamp: 1;
-  -webkit-line-clamp: 1;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 

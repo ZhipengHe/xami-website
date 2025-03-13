@@ -129,7 +129,7 @@ const authors: Authors = {
 
   joaquimjorge: {
     name: "Prof. Joaquim Jorge",
-    title: "Instituto Superior Técnico @University of Lisbon",
+    title: "Instituto Superior Técnico @ULisboa",
     occupation: OccupationSection.Collaborators,
     selected: true,
     url: "https://web.ist.utl.pt/jorgej/",
@@ -173,7 +173,7 @@ const authors: Authors = {
   // Researchers
   mythreyivelmurugan: {
     name: "Dr. Mythreyi Velmurugan",
-    title: "School of Information Systems @QUT",
+    title: "Associate Lecturer, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "https://www.qut.edu.au/about/our-people/academic-profiles/m.velmurugan",
@@ -202,7 +202,7 @@ const authors: Authors = {
 
   pengyu: {
     name: "Peng Yu (Kenny)",
-    title: "PhD Student @QUT",
+    title: "PhD Student, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: false,
     url: "",
@@ -216,7 +216,7 @@ const authors: Authors = {
 
   bemaliwickramanayake: {
     name: "Bemali Wickramanayake",
-    title: "PhD Student @QUT",
+    title: "PhD Student, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "",
@@ -230,7 +230,7 @@ const authors: Authors = {
 
   jiawei: {
     name: "Jia Wei (Jenny)",
-    title: "PhD Student @QUT",
+    title: "PhD Student, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "",
@@ -244,7 +244,7 @@ const authors: Authors = {
 
   chihchenghsieh: {
     name: "Chihcheng Hsieh (Richard)",
-    title: "PhD Student @QUT",
+    title: "PhD Student, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "",
@@ -259,7 +259,7 @@ const authors: Authors = {
 
   zhipenghe: {
     name: "Zhipeng He (Zippo)",
-    title: "PhD Student @QUT",
+    title: "PhD Student, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "https://zhipenghe.me",
@@ -274,7 +274,7 @@ const authors: Authors = {
 
   jingyang: {
     name: "Dr. Jing Yang (Roy)",
-    title: "Post-doc Research Fellow @QUT",
+    title: "Post-doc Research Fellow, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "https://royjy.me/",
@@ -304,7 +304,7 @@ const authors: Authors = {
 
   zepingwang: {
     name: "Zeping Wang (Chester)",
-    title: "PhD Student @QUT",
+    title: "PhD Student, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "",
@@ -318,7 +318,7 @@ const authors: Authors = {
 
   mohammedosmangani: {
     name: "Mohammed Osman Gani",
-    title: "PhD Student @QUT",
+    title: "PhD Student, School of Information Systems @QUT",
     occupation: OccupationSection.Researchers,
     selected: true,
     url: "",
@@ -332,7 +332,7 @@ const authors: Authors = {
   
   goncaloalmeida: {
     name: "Gonçalo Almeida",
-    title: "Master Student @University of Lisbon",
+    title: "Master Student, Instituto Superior Técnico @ULisboa",
     occupation: OccupationSection.ExternalResearchers,
     selected: true,
     url: "",
@@ -346,7 +346,7 @@ const authors: Authors = {
 
   andreluis: {
     name: "André Luís",
-    title: "Master Student @University of Lisbon",
+    title: "Master Student, Instituto Superior Técnico @ULisboa",
     occupation: OccupationSection.ExternalResearchers,
     selected: true,
     url: "",
@@ -360,7 +360,7 @@ const authors: Authors = {
 
   diogoalvito: {
     name: "Diogo Alvito",
-    title: "Master Student @University of Lisbon",
+    title: "Master Student, Instituto Superior Técnico @ULisboa",
     occupation: OccupationSection.ExternalResearchers,
     selected: true,
     url: "",
@@ -374,7 +374,7 @@ const authors: Authors = {
 
   alexanderstevens: {
     name: "Alexander Stevens",
-    title: "Visiting PhD Student @QUT",
+    title: "Visiting PhD Student @QUT, PhD Researcher @KU Leuven",
     occupation: OccupationSection.ExternalResearchers,
     selected: true,
     url: "https://alexanderpaulstevens.github.io/portfolio/",
