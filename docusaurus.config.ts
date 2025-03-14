@@ -176,9 +176,25 @@ const config: Config = {
             href: 'mailto:xami.initiaive@gmail.com',
           },
           {
-            label: 'Licenses',
-            to: '/licenses'
-          }
+            label: 'Third-Party Licenses',
+            to: '/third-party-licenses'
+          },
+          {
+            label: 'Privacy Policy',
+            to: '/privacy-policy'
+          },
+          {
+            html: `
+            <div style="display: flex; align-items: center;">
+              <a href="https://vercel.com/" target="_blank" rel="noreferrer noopener" aria-label="Powered by Vercel" style="width: 40%; margin-right: 5%;">
+                <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" style="width: 100%; height: auto;"/>
+              </a>
+              <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener" aria-label="Built with Docusaurus" style="">
+                <img src="https://docusaurus.io/img/docusaurus_keytar.svg" alt="Built with Docusaurus" style="width: 22%; height: auto;"/>
+              </a>
+            </div>
+            `,
+          },
         ],
       }
       ],
@@ -186,7 +202,7 @@ const config: Config = {
         alt: 'XAMI Lab Logo',
         src: '/img/XAMI-Lab-Long.png',
         href: '/',
-        style: {width: "30%", height: "auto"},
+        style: {width: "250px", height: "auto"},
       },
       copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab @QUT. Last updated: ${new Date().toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} `,
 
