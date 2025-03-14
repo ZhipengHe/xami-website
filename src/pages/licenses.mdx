@@ -1,0 +1,89 @@
+import React, { useEffect, useState } from 'react';
+
+# Third-Party Licenses
+
+This website is built using various open source packages. Below is a list of all packages and their licenses.
+
+export function LicensesDisplay() {
+  const [licenseData, setLicenseData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchLicenses() {
+      try {
+        const response = await fetch('/thirdPartyNotice.json');
+        if (!response.ok) {
+          throw new Error('Failed to load license data');
+        }
+        const data = await response.json();
+        setLicenseData(data);
+      } catch (err) {
+        console.error('Error loading licenses:', err);
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchLicenses();
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading license information...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="alert alert--warning">
+        <p>
+          Unable to load license data: {error}. 
+          If you're in development mode, this information is only generated during production builds.
+        </p>
+      </div>
+    );
+  }
+
+  // Group packages by license type
+  const licenseGroups = {};
+  licenseData.forEach(pkg => {
+    const licenseType = pkg.license || 'Unknown';
+    if (!licenseGroups[licenseType]) {
+      licenseGroups[licenseType] = [];
+    }
+    licenseGroups[licenseType].push(pkg);
+  });
+
+  return (
+    <>
+      {Object.entries(licenseGroups).map(([licenseType, packages]) => (
+        <div key={licenseType} className="margin-bottom--lg">
+          <h2>{licenseType} License</h2>
+          {packages.map(pkg => (
+            <div key={pkg.name} className="margin-bottom--md padding--md" style={{border: '1px solid #eee', borderRadius: '8px'}}>
+              <h3>{pkg.name} v{pkg.version}</h3>
+              {pkg.author && <p>Author: {pkg.author}</p>}
+              {pkg.repository && <p>Repository: <a href={pkg.repository} target="_blank" rel="noopener noreferrer">{pkg.repository}</a></p>}
+              <details>
+                <summary>View License Text</summary>
+                <pre style={{maxHeight: '200px', overflow: 'auto', padding: '10px', background: '#f6f8fa', fontSize: '0.85em'}}>{pkg.licenseText}</pre>
+              </details>
+            </div>
+          ))}
+        </div>
+      ))}
+      
+      {licenseData.length === 1 && licenseData[0].name === 'placeholder' && (
+        <div className="alert alert--info">
+          <p>You're viewing placeholder license data in development mode. Run <code>yarn build</code> to generate the complete license information.</p>
+        </div>
+      )}
+    </>
+  );
+}
+
+<LicensesDisplay />
+
+---
+
+Last updated: {new Date().toLocaleDateString()}

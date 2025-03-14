@@ -126,34 +126,46 @@ const config: Config = {
       style: 'dark',
       links: [
       {
-        title: 'Related Links',
+        title: 'Research Affiliations',
         items: [
+            // {
+            //   html: `
+            //       <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website">
+            //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 40%; height: auto;"/>
+            //       </a>
+            //     `,
+            // },
+            // {
+            //   html: `
+            //       <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
+            //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+            //       </a>
+            //     `,
+            // },
           {
             html: `
-                <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 40%; height: auto;"/>
+              <div style="display: flex; align-items: center;">
+                <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website" style="width: 65%; margin-right: -15%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 62%; height: auto;"/>
                 </a>
-              `,
+                <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website"  style="width: 25%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 100%; height: auto;"/>
+                </a>
+              </div>  
+            `,
           },
           {
-            html: `
-                <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+            html:`
+              <div style="display: flex; align-items: center;">
+                <a href="https://tecnico.ulisboa.pt/en/" target="_blank" rel="noreferrer noopener" aria-label="Técnico Lisboa" style="width: 65%; margin-right: -28%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/IST_A_RGB_NEG.png" alt="Técnico Lisboa Website" style="width: 40%; height: auto;"/>
                 </a>
-              `,
-          },
-          // {
-          //   html: `
-          //     <div style="display: flex; align-items: left;">
-          //       <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website" style="width: 65%">
-          //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 62%; height: auto;"/>
-          //       </a>
-          //       <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website"  style="width: 25%;">
-          //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 100%; height: auto;"/>
-          //       </a>
-          //     </div>
-          //   `,
-          // },
+                <a href="https://www.kuleuven.be/english/kuleuven" target="_blank" rel="noreferrer noopener" aria-label="KU Leuven" style="width: 28%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/KU_Leuven_logo.svg" alt="KU Leuven Website" style="width: 100%; height: auto;"/>
+                </a>
+              </div>
+            `,
+          }
         ],
       },
       {
