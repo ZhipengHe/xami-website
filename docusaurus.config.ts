@@ -2,6 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import WebpackLicensePlugin from 'webpack-license-plugin';
+
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -133,22 +135,38 @@ const config: Config = {
                 </a>
               `,
           },
+          {
+            html: `
+                <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+                </a>
+              `,
+          },
           // {
           //   html: `
-          //       <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
-          //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+          //     <div style="display: flex; align-items: left;">
+          //       <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website" style="width: 65%">
+          //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 62%; height: auto;"/>
           //       </a>
-          //     `,
+          //       <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website"  style="width: 25%;">
+          //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 100%; height: auto;"/>
+          //       </a>
+          //     </div>
+          //   `,
           // },
         ],
       },
       {
-        title: 'Contact Us',
+        title: 'About',
         items: [
           {
-            label: 'Email',
+            label: 'Contact Us',
             href: 'mailto:xami.initiaive@gmail.com',
           },
+          {
+            label: 'Licenses',
+            to: '/licenses'
+          }
         ],
       }
       ],
@@ -156,7 +174,7 @@ const config: Config = {
         alt: 'XAMI Lab Logo',
         src: '/img/XAMI-Lab-Long.png',
         href: '/',
-        style: {width: "40%", height: "auto"},
+        style: {width: "30%", height: "auto"},
       },
       copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab @QUT. Last updated: ${new Date().toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} `,
 
@@ -166,6 +184,32 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  
+  plugins: [
+    function webpackLicensePlugin() {
+      return {
+        name: 'webpack-license-plugin',
+        configureWebpack(config, isServer, utils, content) {
+          if (!isServer){
+            return {
+              plugins: [
+                new WebpackLicensePlugin(
+                  {
+                    outputFilename: 'thirdPartyNotice.json',
+                    replenishDefaultLicenseTexts: true,
+                    unacceptableLicenseTest: (licenseIdentifier) => {
+                      return ['GPL', 'AGPL', 'LGPL', 'NGPL'].includes(licenseIdentifier)
+                    }
+                  }
+                )
+              ],
+            }; 
+          }
+          return {};
+        },
+      };
+    },
+  ],
 };
 
 export default config;
