@@ -2,13 +2,15 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import WebpackLicensePlugin from 'webpack-license-plugin';
+
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const baseUrl = '/';
 
 const config: Config = {
-  title: 'Welcome to XAMI Lab @QUT',
+  title: 'XAMI Lab @QUT',
   tagline: `Supporting Human-Machine Collaboration and Co-evolution by Explainable Analytics for Machine Intelligence`,
   favicon: 'img/favicon.ico',
 
@@ -72,7 +74,8 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         pages: {
-          remarkPlugins: [],
+          remarkPlugins: [
+          ],
           rehypePlugins: [],
         },
         theme: {
@@ -123,30 +126,74 @@ const config: Config = {
       style: 'dark',
       links: [
       {
-        title: 'Related Links',
+        title: 'Research Affiliations',
         items: [
+            // {
+            //   html: `
+            //       <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website">
+            //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 40%; height: auto;"/>
+            //       </a>
+            //     `,
+            // },
+            // {
+            //   html: `
+            //       <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
+            //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
+            //       </a>
+            //     `,
+            // },
           {
             html: `
-                <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 40%; height: auto;"/>
+              <div style="display: flex; align-items: center;">
+                <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website" style="width: 65%; margin-right: -15%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 62%; height: auto;"/>
                 </a>
-              `,
+                <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website"  style="width: 25%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 100%; height: auto;"/>
+                </a>
+              </div>  
+            `,
           },
-          // {
-          //   html: `
-          //       <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website">
-          //         <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 25%; height: auto;"/>
-          //       </a>
-          //     `,
-          // },
+          {
+            html:`
+              <div style="display: flex; align-items: center;">
+                <a href="https://tecnico.ulisboa.pt/en/" target="_blank" rel="noreferrer noopener" aria-label="Técnico Lisboa" style="width: 65%; margin-right: -28%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/IST_A_RGB_NEG.png" alt="Técnico Lisboa Website" style="width: 40%; height: auto;"/>
+                </a>
+                <a href="https://www.kuleuven.be/english/kuleuven" target="_blank" rel="noreferrer noopener" aria-label="KU Leuven" style="width: 28%;">
+                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/KU_Leuven_logo.svg" alt="KU Leuven Website" style="width: 100%; height: auto;"/>
+                </a>
+              </div>
+            `,
+          }
         ],
       },
       {
-        title: 'Contact Us',
+        title: 'About',
         items: [
           {
-            label: 'Email',
+            label: 'Contact Us',
             href: 'mailto:xami.initiaive@gmail.com',
+          },
+          {
+            label: 'Third-Party Licenses',
+            to: '/third-party-licenses'
+          },
+          {
+            label: 'Privacy Policy',
+            to: '/privacy-policy'
+          },
+          {
+            html: `
+            <div style="display: flex; align-items: center;">
+              <a href="https://vercel.com/" target="_blank" rel="noreferrer noopener" aria-label="Powered by Vercel" style="width: 40%; margin-right: 5%;">
+                <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" style="width: 100%; height: auto;"/>
+              </a>
+              <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener" aria-label="Built with Docusaurus" style="">
+                <img src="https://docusaurus.io/img/docusaurus_keytar.svg" alt="Built with Docusaurus" style="width: 22%; height: auto;"/>
+              </a>
+            </div>
+            `,
           },
         ],
       }
@@ -155,7 +202,7 @@ const config: Config = {
         alt: 'XAMI Lab Logo',
         src: '/img/XAMI-Lab-Long.png',
         href: '/',
-        style: {width: "40%", height: "auto"},
+        style: {width: "250px", height: "auto"},
       },
       copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab @QUT. Last updated: ${new Date().toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} `,
 
@@ -165,6 +212,32 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  
+  plugins: [
+    function webpackLicensePlugin() {
+      return {
+        name: 'webpack-license-plugin',
+        configureWebpack(config, isServer, utils, content) {
+          if (!isServer){
+            return {
+              plugins: [
+                new WebpackLicensePlugin(
+                  {
+                    outputFilename: 'thirdPartyNotice.json',
+                    replenishDefaultLicenseTexts: true,
+                    unacceptableLicenseTest: (licenseIdentifier) => {
+                      return ['GPL', 'AGPL', 'LGPL', 'NGPL'].includes(licenseIdentifier)
+                    }
+                  }
+                )
+              ],
+            }; 
+          }
+          return {};
+        },
+      };
+    },
+  ],
 };
 
 export default config;

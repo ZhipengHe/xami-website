@@ -17,8 +17,9 @@
   border: 1px solid var(--ifm-color-emphasis-200);
 }
 
-/* Style selector */
-.citation-style-selector {
+/* Style selector & Sort selector*/
+.citation-style-selector,
+.sort-selector {
   margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
@@ -26,13 +27,15 @@
   gap: 0.75rem;
 }
 
-.citation-style-selector label {
+.citation-style-selector label,
+.sort-selector label {
   font-weight: 600;
   margin: 0;
   min-width: 110px;
 }
 
-.citation-style-select {
+.citation-style-select,
+.sort-select {
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: 1px solid var(--ifm-color-emphasis-300);
@@ -40,6 +43,28 @@
   font-size: 1rem;
   min-width: 200px;
   cursor: pointer;
+}
+
+.sort-direction-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-background-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-direction-button:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.sort-direction-button:active {
+  background-color: var(--ifm-color-emphasis-200);
 }
 
 /* Paper type filters */
