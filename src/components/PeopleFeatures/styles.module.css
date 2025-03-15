@@ -112,3 +112,90 @@ html[data-theme='dark'] .authorBlogPostCount {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
+
+/* Video embed styles - add to your styles.module.css */
+
+/* Main wrapper for video and contributors */
+.videoEmbedWrapper {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Container for the YouTube video */
+.videoContainer {
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the contributors section */
+.contributorsSection {
+  margin-top: 1.5rem;
+}
+
+/* Video titles */
+.videoVenue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--ifm-color-primary);
+}
+
+.videoTitle {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Contributors grid - inherits from teamGrid but with modifications */
+.contributorsGrid {
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Keep the 2-column layout from teamGrid */
+}
+
+/* Responsive adjustments for video embed */
+@media (max-width: 996px) {
+  .contributorsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .videoVenue {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .videoContainer {
+    margin-bottom: 1rem;
+  }
+  
+  .contributorsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Hover effects */
+.videoContainer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Dark mode adjustments */
+html[data-theme='dark'] .videoContainer {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] .videoVenue {
+  color: var(--ifm-color-primary-lighter);
+}
+
+html[data-theme='dark'] .videoTitle {
+  opacity: 0.8;
+}

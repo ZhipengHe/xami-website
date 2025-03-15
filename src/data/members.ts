@@ -67,7 +67,7 @@ const authors: Authors = {
 
   // Leader
   chunouyang: {
-    name: "A/Prof. Chun OuYang",
+    name: "A/Prof. Chun Ouyang",
     title: "School of Information Systems @QUT",
     occupation: OccupationSection.Leader,
     selected: true,

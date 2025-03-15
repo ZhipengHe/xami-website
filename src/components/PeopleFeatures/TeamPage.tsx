@@ -188,4 +188,6 @@ const TeamPage: React.FC = () => {
   );
 }
 
+export { TeamProfileCard };
+
 export default TeamPage;
