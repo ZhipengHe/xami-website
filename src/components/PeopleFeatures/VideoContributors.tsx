@@ -28,7 +28,7 @@ const VideoContributors: React.FC<VideoContributorsProps> = ({
     return (
         <div className={styles.contributorsSection}>
             {/* Video title */}
-            <h3 className={styles.videoVenue}>{venue}</h3>
+            {/* <h3 className={styles.videoVenue}>{venue}</h3> */}
             <p className={styles.videoTitle}>{title}</p>
 
             {/* Contributors Grid */}
@@ -82,11 +82,6 @@ const VideoEmbed: React.FC<VideoEmbedProps> = ({
 }) => {
     return (
         <div className={styles.videoEmbedWrapper}>
-            <VideoContributors
-                title={title}
-                venue={venue}
-                contributors={contributors}
-            />
             <div className={styles.videoContainer}>
                 <LiteYouTubeEmbed
                     id={id}
@@ -95,6 +90,11 @@ const VideoEmbed: React.FC<VideoEmbedProps> = ({
                     poster="maxresdefault"
                 />
             </div>
+            <VideoContributors
+                title={title}
+                venue={venue}
+                contributors={contributors}
+            />
         </div>
     );
 };

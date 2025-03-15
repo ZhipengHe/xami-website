@@ -3,7 +3,9 @@ export enum OccupationSection {
   Collaborators = "Collaborators",
   Researchers = "Researchers",
   ExternalResearchers = "ExternalResearchers",
-  Alumni = "Alumni"
+  Alumni = "Alumni",
+  Presenters = "Presenters",
+  Deprecated = "Deprecated",
 }
 
 
@@ -186,34 +188,6 @@ const authors: Authors = {
     scholar: "https://scholar.google.com/citations?user=MfkWJ84AAAAJ",
   },
 
-  yuliangchou: {
-    name: "Yu-Liang Chou (Leon)",
-    title: "MPhil Graduate",
-    occupation: OccupationSection.Alumni,
-    selected: true,
-    url: "",
-    image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Leon.jpg",
-    idx: 1,
-    email: "",
-    school: "",
-    university: "",
-    linkedin: "https://www.linkedin.com/in/leon-chou-3b56ba175",
-  },
-
-  pengyu: {
-    name: "Peng Yu (Kenny)",
-    title: "PhD Student, School of Information Systems @QUT",
-    occupation: OccupationSection.Researchers,
-    selected: false,
-    url: "",
-    image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/PengYu.jpg",
-    idx: 4,
-    email: "p6.yu@hdr.qut.edu.au",
-    school: "School of Information Systems",
-    university: "Queensland University of Technology",
-    linkedin: "https://www.linkedin.com/in/kenny-yu-b82373130",
-  },
-
   bemaliwickramanayake: {
     name: "Bemali Wickramanayake",
     title: "PhD Student, School of Information Systems @QUT",
@@ -221,7 +195,7 @@ const authors: Authors = {
     selected: true,
     url: "",
     image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Bemali.png",
-    idx: 5,
+    idx: 3,
     email: "bemali.wickramanayake@hdr.qut.edu.au",
     school: "School of Information Systems",
     university: "Queensland University of Technology",
@@ -235,7 +209,7 @@ const authors: Authors = {
     selected: true,
     url: "",
     image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Jenny.jpg",
-    idx: 6,
+    idx: 4,
     email: "jia.wei@hdr.qut.edu.au",
     school: "School of Information Systems",
     university: "Queensland University of Technology",
@@ -249,7 +223,7 @@ const authors: Authors = {
     selected: true,
     url: "",
     image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Richard.jpg",
-    idx: 7,
+    idx: 5,
     email: "c21.hsieh@qut.edu.au",
     school: "School of Information Systems",
     university: "Queensland University of Technology",
@@ -264,7 +238,7 @@ const authors: Authors = {
     selected: true,
     url: "https://zhipenghe.me",
     image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Zippo.jpg",
-    idx: 8,
+    idx: 6,
     email: "zhipeng.he@hdr.qut.edu.au",
     school: "School of Information Systems",
     university: "Queensland University of Technology",
@@ -288,20 +262,6 @@ const authors: Authors = {
     github: "https://github.com/roy-jingyang",
   },
 
-  giuseppejordao: {
-    name: "Giuseppe Jordão",
-    title: "Research Assistant @QUT",
-    occupation: OccupationSection.Researchers,
-    selected: false,
-    url: "",
-    image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Giuseppe.jpg",
-    idx: 9,
-    email: "guiseppe.jordao@qut.edu.au",
-    school: "School of Information Systems",
-    university: "Queensland University of Technology",
-    linkedin: "https://www.linkedin.com/in/giuseppe-jord%C3%A3o-5b6006120",
-  },
-
   zepingwang: {
     name: "Zeping Wang (Chester)",
     title: "PhD Student, School of Information Systems @QUT",
@@ -309,7 +269,7 @@ const authors: Authors = {
     selected: true,
     url: "",
     image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Chester.jpg",
-    idx: 10,
+    idx: 7,
     email: "zeping.wang@hdr.qut.edu.au",
     school: "School of Information Systems",
     university: "Queensland University of Technology",
@@ -323,13 +283,15 @@ const authors: Authors = {
     selected: true,
     url: "",
     image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Osman.jpg",
-    idx: 11,
+    idx: 8,
     email: "mohammedosman.gani@hdr.qut.edu.au",
     school: "School of Information Systems",
     university: "Queensland University of Technology",
     linkedin: "https://www.linkedin.com/in/mohammed-osman-gani-3b75a0185/",
   },
   
+
+  // External Researchers
   goncaloalmeida: {
     name: "Gonçalo Almeida",
     title: "Master Student, Instituto Superior Técnico @ULisboa",
@@ -386,6 +348,68 @@ const authors: Authors = {
     linkedin: "https://www.linkedin.com/in/alexander-stevens-354b41183/",
     scholar: "https://scholar.google.com/citations?user=fNeFT5EAAAAJ",
   },
+
+// Alumni
+
+yuliangchou: {
+  name: "Yu-Liang Chou (Leon)",
+  title: "MPhil Graduate",
+  occupation: OccupationSection.Alumni,
+  selected: true,
+  url: "",
+  image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Leon.jpg",
+  idx: 1,
+  email: "",
+  school: "",
+  university: "",
+  linkedin: "https://www.linkedin.com/in/leon-chou-3b56ba175",
+},
+
+// Presenters
+
+tomasalves: {
+  name: "Eng. Tomás Alves",
+  title: "Assistant Researcher, Instituto Superior Técnico @ULisboa",
+  occupation: OccupationSection.Presenters,
+  selected: false,
+  url: "https://web.tecnico.ulisboa.pt/tomas.alves/",
+  email: "tomas.alves@iscte-iul.pt",
+  image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/tomas_alves.png",
+  idx: 1,
+  school: "Instituto Superior Técnico",
+  university: "University of Lisbon",
+  linkedin: "https://pt.linkedin.com/in/tom%C3%A1s-alves-1587469b",
+},
+
+// Deprecated authors
+
+pengyu: {
+  name: "Peng Yu (Kenny)",
+  title: "PhD Student, School of Information Systems @QUT",
+  occupation: OccupationSection.Deprecated,
+  selected: false,
+  url: "",
+  image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/PengYu.jpg",
+  idx: 99,
+  email: "p6.yu@hdr.qut.edu.au",
+  school: "School of Information Systems",
+  university: "Queensland University of Technology",
+  linkedin: "https://www.linkedin.com/in/kenny-yu-b82373130",
+},
+
+giuseppejordao: {
+  name: "Giuseppe Jordão",
+  title: "Research Assistant @QUT",
+  occupation: OccupationSection.Deprecated,
+  selected: false,
+  url: "",
+  image_url: "https://cdn.jsdelivr.net/gh/ZhipengHe/ImgRepo@master/img/Giuseppe.jpg",
+  idx: 99,
+  email: "guiseppe.jordao@qut.edu.au",
+  school: "School of Information Systems",
+  university: "Queensland University of Technology",
+  linkedin: "https://www.linkedin.com/in/giuseppe-jord%C3%A3o-5b6006120",
+},
 
 };
 
