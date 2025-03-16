@@ -1,67 +1,65 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import WebpackLicensePlugin from 'webpack-license-plugin';
-
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import WebpackLicensePlugin from "webpack-license-plugin";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
-const baseUrl = '/';
+const baseUrl = "/";
 
 const config: Config = {
-  title: 'XAMI Lab @QUT',
+  title: "XAMI Lab @QUT",
   tagline: `Supporting Human-Machine Collaboration and Co-evolution by Explainable Analytics for Machine Intelligence`,
-  favicon: 'img/favicon.ico',
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://xami-lab.org',
+  url: "https://xami-lab.org",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: baseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'ZhipengHe', // Usually your GitHub org/user name.
-  projectName: 'xami-website', // Usually your repo name.
+  organizationName: "ZhipengHe", // Usually your GitHub org/user name.
+  projectName: "xami-website", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
-          routeBasePath: 'research',
+          sidebarPath: "./sidebars.ts",
+          routeBasePath: "research",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
           //   'https://github.com/ZhipengHe/xami-website/tree/master/',
         },
         blog: {
-          path: 'publications',
-          routeBasePath: 'publications',
-          blogTitle: 'Publications',
-          blogSidebarTitle: 'All Publications',
-          blogSidebarCount: 'ALL',
-          postsPerPage: 'ALL',
-          blogDescription: 'Research publications from XAMI Lab',
+          path: "publications",
+          routeBasePath: "publications",
+          blogTitle: "Publications",
+          blogSidebarTitle: "All Publications",
+          blogSidebarCount: "ALL",
+          postsPerPage: "ALL",
+          blogDescription: "Research publications from XAMI Lab",
           showReadingTime: false,
           remarkPlugins: [],
-          rehypePlugins: [
-          ],
+          rehypePlugins: [],
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
           // Please change this to your repo.
@@ -69,17 +67,16 @@ const config: Config = {
           // editUrl:
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         pages: {
-          remarkPlugins: [
-          ],
+          remarkPlugins: [],
           rehypePlugins: [],
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -87,21 +84,21 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/XAMI_v2.png',
+    image: "img/XAMI_v2.png",
     navbar: {
-      title: 'XAMI Lab',  
+      title: "XAMI Lab",
       logo: {
-        alt: 'XAMI Logo',
-        src: 'img/XAMI-Lab-Collapsed_Overlay.png',
+        alt: "XAMI Logo",
+        src: "img/XAMI-Lab-Collapsed_Overlay.png",
       },
       items: [
-        {to: '/mission', label: 'Our Mission', position: 'left'},
-        {to: '/people', label: 'People', position: 'left'},
+        { to: "/mission", label: "Our Mission", position: "left" },
+        { to: "/people", label: "People", position: "left" },
         {
-          type: 'docSidebar',
-          sidebarId: 'projectSidebar',
-          position: 'left',
-          label: 'Research Projects',
+          type: "docSidebar",
+          sidebarId: "projectSidebar",
+          position: "left",
+          label: "Research Projects",
         },
         // {
         //   type: 'dropdown',
@@ -113,21 +110,21 @@ const config: Config = {
         //     {to: '/publications', label: 'All Publications'},
         //   ],
         // },
-        {to: '/bibliography', label: 'Publications', position: 'left'},
-        {to: '/xami-tube', label: 'XAMI-Tube', position: 'left'},
+        { to: "/bibliography", label: "Publications", position: "left" },
+        { to: "/xami-tube", label: "XAMI-Tube", position: "left" },
         {
-          href: 'https://github.com/XAMI-LAB',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/XAMI-LAB",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
-      {
-        title: 'Research Affiliations',
-        items: [
+        {
+          title: "Research Affiliations",
+          items: [
             // {
             //   html: `
             //       <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website">
@@ -142,96 +139,95 @@ const config: Config = {
             //       </a>
             //     `,
             // },
-          {
-            html: `
+            {
+              html: `
               <div style="display: flex; align-items: center;">
                 <a href="https://www.qut.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="QUT Website" style="width: 65%; margin-right: -15%;">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 62%; height: auto;"/>
+                  <img src="${baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"}img/QUT_TAGLINE_LOGO_LEFT_RGB_paths_REV.svg" alt="QUT Website" style="width: 62%; height: auto;"/>
                 </a>
                 <a href="https://www.uts.edu.au/" target="_blank" rel="noreferrer noopener" aria-label="UTS Website"  style="width: 25%;">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/uts.svg" alt="UTS Website" style="width: 100%; height: auto;"/>
+                  <img src="${baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"}img/uts.svg" alt="UTS Website" style="width: 100%; height: auto;"/>
                 </a>
               </div>  
             `,
-          },
-          {
-            html:`
+            },
+            {
+              html: `
               <div style="display: flex; align-items: center;">
                 <a href="https://tecnico.ulisboa.pt/en/" target="_blank" rel="noreferrer noopener" aria-label="Técnico Lisboa" style="width: 65%; margin-right: -28%;">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/IST_A_RGB_NEG.png" alt="Técnico Lisboa Website" style="width: 40%; height: auto;"/>
+                  <img src="${baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"}img/IST_A_RGB_NEG.png" alt="Técnico Lisboa Website" style="width: 40%; height: auto;"/>
                 </a>
                 <a href="https://www.kuleuven.be/english/kuleuven" target="_blank" rel="noreferrer noopener" aria-label="KU Leuven" style="width: 28%;">
-                  <img src="${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}img/KU_Leuven_logo.svg" alt="KU Leuven Website" style="width: 100%; height: auto;"/>
+                  <img src="${baseUrl.endsWith("/") ? baseUrl : baseUrl + "/"}img/KU_Leuven_logo.svg" alt="KU Leuven Website" style="width: 100%; height: auto;"/>
                 </a>
               </div>
             `,
-          }
-        ],
-      },
-      {
-        title: 'About',
-        items: [
-          {
-            label: 'Contact Us',
-            href: 'mailto:xami.initiaive@gmail.com',
-          },
-          {
-            label: 'Third-Party Licenses',
-            to: '/third-party-licenses'
-          },
-          {
-            label: 'Privacy Policy',
-            to: '/privacy-policy'
-          },
-          {
-            html: `
+            },
+          ],
+        },
+        {
+          title: "About",
+          items: [
+            {
+              label: "Contact Us",
+              href: "mailto:xami.initiaive@gmail.com",
+            },
+            {
+              label: "Third-Party Licenses",
+              to: "/third-party-licenses",
+            },
+            {
+              label: "Privacy Policy",
+              to: "/privacy-policy",
+            },
+            {
+              html: `
             <div style="display: flex; align-items: center;">
-              <a href="https://vercel.com/" target="_blank" rel="noreferrer noopener" aria-label="Powered by Vercel" style="width: 40%; margin-right: 5%;">
+              <a href="https://vercel.com/" target="_blank" rel="noreferrer noopener" aria-label="Powered by Vercel" style="width: 30%; margin-right: 5%;">
                 <img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" style="width: 100%; height: auto;"/>
               </a>
               <a href="https://docusaurus.io/" target="_blank" rel="noreferrer noopener" aria-label="Built with Docusaurus" style="">
-                <img src="https://docusaurus.io/img/docusaurus_keytar.svg" alt="Built with Docusaurus" style="width: 22%; height: auto;"/>
+                <img src="https://docusaurus.io/img/docusaurus_keytar.svg" alt="Built with Docusaurus" style="width: 20%; height: auto;"/>
               </a>
             </div>
             `,
-          },
-        ],
-      }
+            },
+          ],
+        },
       ],
       logo: {
-        alt: 'XAMI Lab Logo',
-        src: '/img/XAMI-Lab-Long.png',
-        href: '/',
-        style: {width: "250px", height: "auto"},
+        alt: "XAMI Lab Logo",
+        src: "/img/XAMI-Lab-Long.png",
+        href: "/",
+        style: { width: "250px", height: "auto" },
       },
-      copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab @QUT. Last updated: ${new Date().toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} `,
-
+      copyright: `Copyright © 2021 - ${new Date().getFullYear()} XAMI Lab @QUT. Last updated: ${new Date().toLocaleString("en-US", { year: "numeric", month: "long", day: "numeric" })} `,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-  
+
   plugins: [
     function webpackLicensePlugin() {
       return {
-        name: 'webpack-license-plugin',
+        name: "webpack-license-plugin",
         configureWebpack(config, isServer, utils, content) {
-          if (!isServer){
+          if (!isServer) {
             return {
               plugins: [
-                new WebpackLicensePlugin(
-                  {
-                    outputFilename: 'thirdPartyNotice.json',
-                    replenishDefaultLicenseTexts: true,
-                    unacceptableLicenseTest: (licenseIdentifier) => {
-                      return ['GPL', 'AGPL', 'LGPL', 'NGPL'].includes(licenseIdentifier)
-                    }
-                  }
-                )
+                new WebpackLicensePlugin({
+                  outputFilename: "thirdPartyNotice.json",
+                  replenishDefaultLicenseTexts: true,
+                  unacceptableLicenseTest: (licenseIdentifier) => {
+                    return ["GPL", "AGPL", "LGPL", "NGPL"].includes(
+                      licenseIdentifier,
+                    );
+                  },
+                }),
               ],
-            }; 
+            };
           }
           return {};
         },

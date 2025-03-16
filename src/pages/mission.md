@@ -11,9 +11,9 @@ To support human-machine collaboration and co-evolution by making machine intell
 ## Our Mission
 
 - Create breakthroughs in building explainable analytics for machine intelligence
-    - Devise new methods and techniques to build robust and interpretable models underpinned by machine intelligence
-    - Design new theories and algorithms to detect biases and provide ethical and fair analyses of machine learned predictions
-    - Develop new frameworks and tools for user-centric intelligent predictive systems that incorporate human-in-the-loop mechanisms
+  - Devise new methods and techniques to build robust and interpretable models underpinned by machine intelligence
+  - Design new theories and algorithms to detect biases and provide ethical and fair analyses of machine learned predictions
+  - Develop new frameworks and tools for user-centric intelligent predictive systems that incorporate human-in-the-loop mechanisms
 - Apply explainable machine intelligence to a wide range of application domains and industry sectors to promote innovative and sustainable industrialization
 - Build collaborative networks and foster multi-stakeholder partnerships in the context of explainable machine intelligence
 - Cultivate young research students to become new generations of career excellence achievers in Data Science

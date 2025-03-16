@@ -1,9 +1,9 @@
-import React from 'react';
-import { formatReference, ReferenceStyle } from './ReferenceFormatters';
+import React from "react";
+import { formatReference, ReferenceStyle } from "./ReferenceFormatters";
 
 /**
  * Interface representing a BibTeX entry as returned by bibtexParse.toJSON().
- * 
+ *
  * @interface BibEntry
  * @property {string} entryType - The type of reference (e.g., 'article', 'book', 'inproceedings')
  * @property {Object} entryTags - Key-value pairs containing the BibTeX fields
@@ -12,19 +12,19 @@ import { formatReference, ReferenceStyle } from './ReferenceFormatters';
 export interface BibEntry {
   entryType: string;
   entryTags: {
-    title?: string;         // Publication title
-    author?: string;        // Authors (format: "Lastname, Firstname and Lastname, Firstname")
-    journal?: string;       // Journal name for articles
-    year?: string;          // Publication year
-    volume?: string;        // Journal/book volume
-    number?: string;        // Issue number for articles
-    pages?: string;         // Page range (e.g., "123--145")
-    publisher?: string;     // Publisher name for books
-    booktitle?: string;     // Title of book containing this entry (for incollection/inproceedings)
-    editor?: string;        // Editor names
-    address?: string;       // Publisher's address
-    url?: string;           // URL to the publication
-    doi?: string;           // Digital Object Identifier
+    title?: string; // Publication title
+    author?: string; // Authors (format: "Lastname, Firstname and Lastname, Firstname")
+    journal?: string; // Journal name for articles
+    year?: string; // Publication year
+    volume?: string; // Journal/book volume
+    number?: string; // Issue number for articles
+    pages?: string; // Page range (e.g., "123--145")
+    publisher?: string; // Publisher name for books
+    booktitle?: string; // Title of book containing this entry (for incollection/inproceedings)
+    editor?: string; // Editor names
+    address?: string; // Publisher's address
+    url?: string; // URL to the publication
+    doi?: string; // Digital Object Identifier
     [key: string]: string | undefined; // Allow for any other BibTeX fields
   };
   citationKey?: string;
@@ -32,7 +32,7 @@ export interface BibEntry {
 
 /**
  * Props for the ReferenceList component.
- * 
+ *
  * @interface ReferenceListProps
  * @property {BibEntry[]} entries - Array of BibTeX entries to display
  * @property {ReferenceStyle} [style] - Citation style to use for formatting
@@ -48,8 +48,8 @@ interface ReferenceListProps {
   className?: string;
   showCitationKeys?: boolean;
   filter?: (entry: BibEntry) => boolean;
-  sortBy?: 'year' | 'author' | 'title' | 'date' | 'citationKey';
-  sortDirection?: 'asc' | 'desc';
+  sortBy?: "year" | "author" | "title" | "date" | "citationKey";
+  sortDirection?: "asc" | "desc";
 }
 
 /**
@@ -62,12 +62,12 @@ interface ReferenceListProps {
  */
 const ReferenceList: React.FC<ReferenceListProps> = ({
   entries,
-  style = 'apa',
-  className = '',
+  style = "apa",
+  className = "",
   showCitationKeys = false,
   filter,
-  sortBy = 'year',
-  sortDirection = 'desc',
+  sortBy = "year",
+  sortDirection = "desc",
 }) => {
   // Apply filter if provided
   // This allows the consumer to filter entries by any criteria
@@ -80,44 +80,46 @@ const ReferenceList: React.FC<ReferenceListProps> = ({
     let valueB: string | undefined;
 
     // Determine which field to sort by
-    if (sortBy === 'year') {
+    if (sortBy === "year") {
       valueA = a.entryTags.year;
       valueB = b.entryTags.year;
-    } else if (sortBy === 'author') {
+    } else if (sortBy === "author") {
       valueA = a.entryTags.author;
       valueB = b.entryTags.author;
-    } else if (sortBy === 'title') {
+    } else if (sortBy === "title") {
       valueA = a.entryTags.title;
       valueB = b.entryTags.title;
-    } else if (sortBy === 'citationKey') {
+    } else if (sortBy === "citationKey") {
       valueA = a.citationKey;
       valueB = b.citationKey;
-    } else if (sortBy === 'date') {
+    } else if (sortBy === "date") {
       valueA = a.entryTags.date;
       valueB = b.entryTags.date;
     }
 
     // Handle cases where values are undefined
-    if (!valueA) return sortDirection === 'asc' ? -1 : 1;
-    if (!valueB) return sortDirection === 'asc' ? 1 : -1;
+    if (!valueA) return sortDirection === "asc" ? -1 : 1;
+    if (!valueB) return sortDirection === "asc" ? 1 : -1;
 
     // Special case for year: convert to numbers for correct numerical sorting
-    if (sortBy === 'year') {
+    if (sortBy === "year") {
       const yearA = parseInt(valueA, 10) || 0;
       const yearB = parseInt(valueB, 10) || 0;
-      return sortDirection === 'asc' ? yearA - yearB : yearB - yearA;
+      return sortDirection === "asc" ? yearA - yearB : yearB - yearA;
     }
 
     // For sorting by date, convert to Date objects for comparison
-    if (sortBy === 'date') {
+    if (sortBy === "date") {
       const dateA = new Date(valueA);
       const dateB = new Date(valueB);
-      return sortDirection === 'asc' ? dateA.getTime() - dateB.getTime() : dateB.getTime() - dateA.getTime();
+      return sortDirection === "asc"
+        ? dateA.getTime() - dateB.getTime()
+        : dateB.getTime() - dateA.getTime();
     }
 
     // For string values, use localeCompare for proper string comparison
-    return sortDirection === 'asc' 
-      ? valueA.localeCompare(valueB) 
+    return sortDirection === "asc"
+      ? valueA.localeCompare(valueB)
       : valueB.localeCompare(valueA);
   });
 
@@ -125,9 +127,9 @@ const ReferenceList: React.FC<ReferenceListProps> = ({
     <div className={`reference-list ${className}`}>
       <ol className="references">
         {sortedEntries.map((entry, index) => (
-          <li 
+          <li
             // Use citation key for unique ID if available, otherwise use index
-            key={entry.citationKey || `ref-${index}`} 
+            key={entry.citationKey || `ref-${index}`}
             // Add ID attribute to allow direct linking to references
             id={entry.citationKey || `ref-${index}`}
             // Add class names for styling: general reference-item class and type-specific class
@@ -139,10 +141,10 @@ const ReferenceList: React.FC<ReferenceListProps> = ({
             )}
             {/* Format and render the reference text with the specified citation style */}
             {/* Note: dangerouslySetInnerHTML is required for formatting (italics, links, etc.) */}
-            <span 
+            <span
               className="reference-text"
-              dangerouslySetInnerHTML={{ 
-                __html: formatReference(entry, style) 
+              dangerouslySetInnerHTML={{
+                __html: formatReference(entry, style),
               }}
             />
           </li>
@@ -150,9 +152,7 @@ const ReferenceList: React.FC<ReferenceListProps> = ({
       </ol>
       {/* Show a message when no references match the filter criteria */}
       {sortedEntries.length === 0 && (
-        <div className="reference-list-empty">
-          No references found
-        </div>
+        <div className="reference-list-empty">No references found</div>
       )}
     </div>
   );

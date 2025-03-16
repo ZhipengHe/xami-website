@@ -19,9 +19,6 @@ Write Abstract Here
 
 ## Cite this work
 
-
-
 ```bibtex
 {bibtex}
 ```
-

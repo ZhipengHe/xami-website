@@ -1,11 +1,11 @@
-import React, { useState, useCallback } from 'react';
-import BibTexLoader from './BibTexLoader';
-import ReferenceList, { BibEntry } from './ReferenceList';
-import { ReferenceStyle } from './ReferenceFormatters';
+import React, { useState, useCallback } from "react";
+import BibTexLoader from "./BibTexLoader";
+import ReferenceList, { BibEntry } from "./ReferenceList";
+import { ReferenceStyle } from "./ReferenceFormatters";
 
 /**
  * Props for the BibTexReferences component.
- * 
+ *
  * @interface BibTexReferencesProps
  * @property {string} filePath - Path to the BibTeX file to load (relative to the static directory)
  * @property {string} [title] - Optional title for the references section
@@ -24,8 +24,8 @@ interface BibTexReferencesProps {
   style?: ReferenceStyle;
   showCitationKeys?: boolean;
   filter?: (entry: BibEntry) => boolean;
-  sortBy?: 'year' | 'author' | 'title' | 'date' | 'citationKey';
-  sortDirection?: 'asc' | 'desc';
+  sortBy?: "year" | "author" | "title" | "date" | "citationKey";
+  sortDirection?: "asc" | "desc";
   className?: string;
   loadingComponent?: React.ReactNode;
   errorComponent?: React.ReactNode | ((error: Error) => React.ReactNode);
@@ -42,13 +42,13 @@ interface BibTexReferencesProps {
  */
 const BibTexReferences: React.FC<BibTexReferencesProps> = ({
   filePath,
-  title = 'References',
-  style = 'apa',
+  title = "References",
+  style = "apa",
   showCitationKeys = false,
   filter,
-  sortBy = 'year',
-  sortDirection = 'desc',
-  className = '',
+  sortBy = "year",
+  sortDirection = "desc",
+  className = "",
   loadingComponent,
   errorComponent,
 }) => {
@@ -61,7 +61,7 @@ const BibTexReferences: React.FC<BibTexReferencesProps> = ({
 
   /**
    * Callback function for when entries are successfully loaded.
-   * 
+   *
    * @param {BibEntry[]} loadedEntries - The parsed BibTeX entries
    */
   const handleLoad = useCallback((loadedEntries: BibEntry[]) => {
@@ -71,7 +71,7 @@ const BibTexReferences: React.FC<BibTexReferencesProps> = ({
 
   /**
    * Callback function for when an error occurs during loading.
-   * 
+   *
    * @param {Error} err - The error that occurred
    */
   const handleError = useCallback((err: Error) => {
@@ -87,11 +87,13 @@ const BibTexReferences: React.FC<BibTexReferencesProps> = ({
           filePath={filePath}
           onLoad={handleLoad}
           onError={handleError}
-          renderLoading={() => 
+          renderLoading={() =>
             // Use custom loading component if provided, otherwise show default
-            loadingComponent ? 
-              <>{loadingComponent}</> : 
+            loadingComponent ? (
+              <>{loadingComponent}</>
+            ) : (
               <div className="bibtex-loading">Loading references...</div>
+            )
           }
         />
       )}
@@ -99,13 +101,16 @@ const BibTexReferences: React.FC<BibTexReferencesProps> = ({
       {/* Show error message if loading failed */}
       {loaded && error && (
         <div className="bibtex-error">
-          {errorComponent ? 
+          {errorComponent ? (
             // Support both function and component for error display
-            (typeof errorComponent === 'function' ? 
-              errorComponent(error) : 
-              errorComponent) : 
+            typeof errorComponent === "function" ? (
+              errorComponent(error)
+            ) : (
+              errorComponent
+            )
+          ) : (
             <p>Error loading references: {error.message}</p>
-          }
+          )}
         </div>
       )}
 
@@ -127,6 +132,6 @@ const BibTexReferences: React.FC<BibTexReferencesProps> = ({
       )}
     </div>
   );
-};//
+}; //
 
 export default BibTexReferences;
