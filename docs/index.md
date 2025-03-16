@@ -16,4 +16,3 @@ Our work spans four interconnected research themes that address different facets
 4. **Explainable Medical Diagnostic Systems**: We build human-centric explainable interfaces that assist physicians in understanding AI predictions for medical image diagnosis. Our frameworks support the generation of intuitive explanations that translate complex model outputs into actionable clinical insights.
 
 These research directions share a common goal: to develop AI systems that not only make accurate predictions but can also communicate their reasoning in ways that are meaningful, trustworthy, and actionable for human users. Through this work, we aim to advance the field of XAI and contribute to the responsible development and deployment of AI across healthcare, industry, government, and other critical sectors.
-

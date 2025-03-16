@@ -41,7 +41,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 } */
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #eff6fb;
   --ifm-color-primary-dark: #c8e0f1;
   --ifm-color-primary-darker: #b4d5ec;
@@ -52,24 +52,22 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-
 /* In your styles module (likely src/pages/styles.module.css) */
 .hero.hero--primary[class*="heroBanner_"] {
-  background-image: url('/img/Brisbane_CBD_OJW_2024_Downsample.jpg');
+  background-image: url("/img/Brisbane_CBD_OJW_2024_Downsample.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   /* Optional: add a dark overlay */
   background-color: rgba(0, 0, 0, 0.5);
-     background-blend-mode: overlay;
+  background-blend-mode: overlay;
   /* If you want text to be visible against any background */
   color: #ffffff; /* Light text color */
-
 }
 
 /* You can also include custom CSS files. */
-@import 'blog.css';
-@import 'footer.css';
-@import 'bibtex-references.css';
-@import 'filter-controls-styles.css';
-@import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+@import "blog.css";
+@import "footer.css";
+@import "bibtex-references.css";
+@import "filter-controls-styles.css";
+@import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";

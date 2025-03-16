@@ -9,17 +9,16 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 - [x] Use `create-docusaurus` to create a new template website
 - [x] Add pages for each of the main sections from the current website
 - [ ] Add content to each of the pages
-    - [x] Config Home page
-    - [x] Add Our Mission page
-    - [ ] Add People page
-    - [x] Add Research Projects page (with subpages)
-        - [x] Add subpage for project 1
-        - [x] Add subpage for project 2
-        - [x] Add subpage for project 3
-        - [x] Add subpage for project 4
-    - [ ] Add Publications page
-    - [ ] Add XAMI-Tube page
-
+  - [x] Config Home page
+  - [x] Add Our Mission page
+  - [ ] Add People page
+  - [x] Add Research Projects page (with subpages)
+    - [x] Add subpage for project 1
+    - [x] Add subpage for project 2
+    - [x] Add subpage for project 3
+    - [x] Add subpage for project 4
+  - [ ] Add Publications page
+  - [ ] Add XAMI-Tube page
 
 ## Getting Started
 

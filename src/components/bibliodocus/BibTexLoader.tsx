@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import * as bibtexParse from '@orcid/bibtex-parse-js';
+import React, { useState, useEffect } from "react";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import * as bibtexParse from "@orcid/bibtex-parse-js";
 
 /**
  * Props for the BibTexLoader component.
- * 
+ *
  * @interface BibTexLoaderProps
  * @property {string} filePath - Path to the BibTeX file to load (relative to the static directory)
  * @property {function} onLoad - Callback function that receives the parsed BibTeX entries
@@ -21,7 +21,7 @@ interface BibTexLoaderProps {
 /**
  * Component that loads a BibTeX file and parses it using bibtexParse.
  * This component handles loading states and error handling internally.
- * 
+ *
  * @component
  * @param {BibTexLoaderProps} props - Component props
  * @returns {React.ReactNode | null} - Returns loading indicator or null when complete
@@ -47,24 +47,25 @@ const BibTexLoader: React.FC<BibTexLoaderProps> = ({
         setLoading(true);
         // Fetch the BibTeX file from the provided path
         const response = await fetch(filePath);
-        
+
         // Handle HTTP errors
         if (!response.ok) {
           throw new Error(`Failed to load BibTeX file: ${response.statusText}`);
         }
-        
+
         // Get the text content of the file
         const bibContent = await response.text();
-        
+
         // Parse BibTeX content using the @orcid/bibtex-parse-js library
         const entries = bibtexParse.toJSON(bibContent);
-        
+
         // Pass the parsed entries to the parent component via callback
         onLoad(entries);
         setLoading(false);
       } catch (err) {
         // Convert any error to an Error object for consistency
-        const error = err instanceof Error ? err : new Error('Unknown error occurred');
+        const error =
+          err instanceof Error ? err : new Error("Unknown error occurred");
         setError(error);
         // Notify parent component of the error via callback
         if (onError) {
@@ -100,17 +101,13 @@ const BibTexLoader: React.FC<BibTexLoaderProps> = ({
  * that the BibTexLoader only runs in the browser environment.
  * This is necessary because the component uses the fetch API,
  * which is not available during server-side rendering.
- * 
+ *
  * @component
  * @param {BibTexLoaderProps} props - The props to pass to the BibTexLoader
  * @returns {JSX.Element} - The wrapped BibTexLoader component
  */
 const BibTexLoaderWrapper: React.FC<BibTexLoaderProps> = (props) => {
-  return (
-    <BrowserOnly>
-      {() => <BibTexLoader {...props} />}
-    </BrowserOnly>
-  );
+  return <BrowserOnly>{() => <BibTexLoader {...props} />}</BrowserOnly>;
 };
 
 export default BibTexLoaderWrapper;

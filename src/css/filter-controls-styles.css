@@ -151,12 +151,12 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .citation-style-selector label,
   .citation-style-select {
     width: 100%;
   }
-  
+
   .paper-type-checkbox-item {
     min-width: 140px;
   }

@@ -1,10 +1,10 @@
-import React, {type ReactNode} from 'react';
-import clsx from 'clsx';
-import Link, {type Props as LinkProps} from '@docusaurus/Link';
-import AuthorSocials from '@theme/Blog/Components/Author/Socials';
-import type {Props} from '@theme/Blog/Components/Author';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import React, { type ReactNode } from "react";
+import clsx from "clsx";
+import Link, { type Props as LinkProps } from "@docusaurus/Link";
+import AuthorSocials from "@theme/Blog/Components/Author/Socials";
+import type { Props } from "@theme/Blog/Components/Author";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
 
 function MaybeLink(props: LinkProps): ReactNode {
   if (props.href) {
@@ -13,7 +13,7 @@ function MaybeLink(props: LinkProps): ReactNode {
   return <>{props.children}</>;
 }
 
-function AuthorTitle({title}: {title: string}) {
+function AuthorTitle({ title }: { title: string }) {
   return (
     <small className={styles.authorTitle} title={title}>
       {title}
@@ -21,7 +21,7 @@ function AuthorTitle({title}: {title: string}) {
   );
 }
 
-function AuthorName({name, as}: {name: string; as: Props['as']}) {
+function AuthorName({ name, as }: { name: string; as: Props["as"] }) {
   if (!as) {
     return <span className={styles.authorName}>{name}</span>;
   } else {
@@ -33,7 +33,7 @@ function AuthorName({name, as}: {name: string; as: Props['as']}) {
   }
 }
 
-function AuthorBlogPostCount({count}: {count: number}) {
+function AuthorBlogPostCount({ count }: { count: number }) {
   return <span className={clsx(styles.authorBlogPostCount)}>{count}</span>;
 }
 
@@ -47,21 +47,22 @@ export default function BlogAuthor({
   className,
   count,
 }: Props): ReactNode {
-  const {name, title, url, imageURL, email, page} = author;
+  const { name, title, url, imageURL, email, page } = author;
   const link =
     page?.permalink || url || (email && `mailto:${email}`) || undefined;
 
   return (
     <div
       className={clsx(
-        'avatar margin-bottom--sm',
+        "avatar margin-bottom--sm",
         className,
         styles[`author-as-${as}`],
-      )}>
+      )}
+    >
       {imageURL && (
         <MaybeLink href={link} className="avatar__photo-link">
           <img
-            className={clsx('avatar__photo', styles.authorImage)}
+            className={clsx("avatar__photo", styles.authorImage)}
             src={imageURL}
             alt={name}
           />
@@ -69,7 +70,7 @@ export default function BlogAuthor({
       )}
 
       {(name || title) && (
-        <div className={clsx('avatar__intro', styles.authorDetails)}>
+        <div className={clsx("avatar__intro", styles.authorDetails)}>
           <div className="avatar__name">
             {name && (
               <MaybeLink href={link}>

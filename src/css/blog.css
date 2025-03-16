@@ -1,6 +1,6 @@
-.blog-list-page article h2[class*="title_"], 
+.blog-list-page article h2[class*="title_"],
 .blog-authors-posts-page article h2[class*="title_"],
 .blog-tags-post-list-page article h2[class*="title_"],
 .blog-post-page article h1[class*="title_"] {
-    font-size: var(--ifm-h1-font-size);
+  font-size: var(--ifm-h1-font-size);
 }
